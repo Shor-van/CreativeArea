@@ -1,0 +1,9 @@
+creative-area:
+    world: "SMP World"
+    x: 100000.5
+    y: 64
+    z: 100000.5
+    
+players-in-creative: []
+
+player-inventory-data: []
