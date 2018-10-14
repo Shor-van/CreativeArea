@@ -5,10 +5,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class EventListener implements Listener
 {
-	private final JavaPlugin plugin;
-	
-	public EventListener(JavaPlugin plugin)
-	{
-		this.plugin = plugin;
-	}
+    private final JavaPlugin plugin;
+
+    public EventListener(JavaPlugin plugin)
+    {
+        this.plugin = plugin;
+    }
 }
