@@ -12,20 +12,28 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+/**Handles the execution of commands for the creative area plugin*/
 public class CommandHandler implements CommandExecutor
 {
-    private final JavaPlugin plugin;
-
+    private final JavaPlugin plugin; //Reference to the base plugin
+    
+    /**Creates a new instance of the command handler, there should only be one
+     * @param plugin the plugin, this should be of type CreativeArea*/
     public CommandHandler(JavaPlugin plugin)
     {
         this.plugin = plugin;
     }
 
+    /**Handles the /tpcreative /leavecreative commands, triggered when any of these commands are sent to the server
+     * @param sender the CommandSender object that sent the command
+     * @param cmd the command that was sent, in this case it should only be /shop
+     * @param label the CommandSender object that sent the command
+     * @param args the arguments that the user sent with the command*/
     @Override
     @SuppressWarnings({ "unchecked", "deprecation" })
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
     {
-        if (cmd.getName().equalsIgnoreCase("tpcreative"))
+        if (cmd.getName().equalsIgnoreCase("tpcreative")) //if its the /tpcreative command
         {
             if (sender.isOp() == true && sender.hasPermission("creativearea.command.gocreative") == true)
             {
@@ -89,7 +97,7 @@ public class CommandHandler implements CommandExecutor
                 return true;
             }
         } 
-        else if (cmd.getName().equalsIgnoreCase("leavecreative"))
+        else if (cmd.getName().equalsIgnoreCase("leavecreative")) //if its the leave creative command
         {
             if (sender.isOp() == true && sender.hasPermission("creativearea.command.gocreative") == true)
             {

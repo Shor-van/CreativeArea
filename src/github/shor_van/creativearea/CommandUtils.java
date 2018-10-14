@@ -19,29 +19,19 @@ import org.bukkit.entity.minecart.CommandMinecart;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Team;
 
-/**
- * Public class that allows the use of the standard minecraft command tags like @e in plugins
- */
+/**Public class that allows the use of the standard minecraft command tags like @e in plugins*/
 public class CommandUtils
 {
 
-    /**
-     * Use this if you are unsure if a player provided the "@a" tag. This will allow multiple entities to be retrieved.
-     * 
+    /**Use this if you are unsure if a player provided the "@a" tag. This will allow multiple entities to be retrieved.
      * This can return a null variable if no tags are included, or if a value for a tag does not exist (I.e if the tag [type=___] contains an entity that does not exist in the specified world)
-     * 
      * The may also be empty or null values at the end of the array. Once a null value has been reached, you do not need to loop through any of the higher indexes
-     * 
      * Currently supports the tags: @p , @a , @e , @r
-     * 
      * Currently supports the selectors: [type=] [r=] [rm=] [c=] [w=] [m=] [name=] [l=] [lm=] [h=] [hm=] [rx=] [rxm=] [ry=] [rym=] [team=] [score_---=] [score_---_min=]
-     * 
      * All selectors can be inverted.
-     * 
      * @param sender command sender
      * @param arg    argument to test for
-     * @return The entities that match the criteria
-     */
+     * @return The entities that match the criteria*/
     @SuppressWarnings("deprecation")
     public static Entity[] getTargets(CommandSender sender, String arg)
     {
@@ -212,33 +202,23 @@ public class CommandUtils
         return ents;
     }
 
-    /**
-     * Returns one entity. Use this if you know the player will not provide the '@a' tag.
-     * 
+    /**Returns one entity. Use this if you know the player will not provide the '@a' tag.
      * This can return a null variable if no tags are included, or if a value for a tag does not exist (I.e if the tag [type=___] contains an entity that does not exist in the specified world)
-     * 
      * @param sender who sent the command
-     * @param arg    the argument
-     * @return The first entity retrieved.
-     */
+     * @param arg the argument
+     * @return The first entity retrieved.*/
     public static Entity getTarget(CommandSender sender, String arg)
     {
         return getTargets(sender, arg)[0];
     }
 
-    /**
-     * Returns an integer. Use this to support "~" by providing what it will mean.
-     * 
+    /**Returns an integer. Use this to support "~" by providing what it will mean.
      * E.g. rel="x" when ~ should be turn into the entity's X coord.
-     * 
      * Currently supports "x", "y" and "z".
-     * 
-     * 
      * @param arg the argument
      * @param rel what the int should represent
-     * @param e   the entity to get the relative int from.
-     * @return the int
-     */
+     * @param e the entity to get the relative int from.
+     * @return the int*/
     public static int getIntRelative(String arg, String rel, Entity e)
     {
         int relInt = 0;

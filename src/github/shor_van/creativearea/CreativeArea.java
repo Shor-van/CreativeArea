@@ -9,11 +9,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
+/**The main class for the plugin*/
 public class CreativeArea extends JavaPlugin
 {
-    private Location creativeArea;
-    private CommandHandler cmdHandler;
-
+    private Location creativeArea; //The location of the create area
+    private CommandHandler cmdHandler; //The command handler for the plugin
+    
+    /**Handles the initialization of the plugin.*/
     @Override
     public void onEnable()
     {
@@ -41,6 +43,7 @@ public class CreativeArea extends JavaPlugin
         }
     }
 
+    /**Handles the disabling of the plugin.*/
     @Override
     public void onDisable()
     {
@@ -48,6 +51,8 @@ public class CreativeArea extends JavaPlugin
         creativeArea = null;
     }
 
+    /**Retrieves a player's inventory from the config file 
+     * @param player the player who's inventory to restore*/
     public void setPlayerInventoryFromFile(Player player)
     {
         String loadPath = "player-inventory-data." + player.getName();
@@ -67,7 +72,9 @@ public class CreativeArea extends JavaPlugin
         else
             this.getLogger().warning("Could not find inventory data for player: " + player.getName());
     }
-
+    
+    /**Saves the player's inventory to the config file
+     * @param player the player who's inventory we are saving*/
     public void savePlayerInevntoryToFile(Player player)
     {
         String savePath = "player-inventory-data." + player.getName();
@@ -83,9 +90,8 @@ public class CreativeArea extends JavaPlugin
 
         this.saveConfig();
     }
-
-    public Location getCreativeArea()
-    {
-        return creativeArea;
-    }
+    
+    /**Gets the location of were the players get teleported to
+     * @return the location of the creative area*/
+    public Location getCreativeArea() { return creativeArea; }
 }
