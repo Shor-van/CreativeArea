@@ -1,6 +1,6 @@
 name: CreativeArea
 main: github.shor_van.creativearea.CreativeArea
-version: 1.0.10b b29 (1.13.2)
+version: 1.0.11b b30 (1.14)
 api-version: 1.13
 commands:
     tpcreative:
